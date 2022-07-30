@@ -42,7 +42,6 @@ if(parsedURL.pathname==='/createUser'&&req.method==='POST'){
    req.on('close',()=>{
     console.log("close")
    })
-  
    res.end("successfully created")
 }
 else{
