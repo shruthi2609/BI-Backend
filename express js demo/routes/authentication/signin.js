@@ -11,6 +11,7 @@ Router.post('/signin',async (req,res)=>{
     console.log(authenticate)
     if(authenticate){
         const token=jwt.sign({username:data.username},'jamesbond',{expiresIn:'1h'})
+        
         console.log(token)
         res.send({msg:"you are authenticated",token:token})
     }

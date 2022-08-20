@@ -1,6 +1,6 @@
 const express=require('express')
 const Router=express.Router()
-const jwt=require("jsonwebtoken")
+
 const asModel=require('../../models/AuthenticationModel')
 const authorize=require("../../middlewares/authorize")
 Router.get('/viewconfidential',authorize,async (req,res)=>{
