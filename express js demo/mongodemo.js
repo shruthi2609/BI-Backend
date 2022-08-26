@@ -4,12 +4,39 @@ mongoose.connect('mongodb://localhost:27017/DemoDB').then((res)=>console.log('co
 const schema=mongoose.Schema
 const userSchema=new schema({
     username:String,
-    password:String,
-    role:String,
-    age:Number
+    age:Number,
+    country:String
 })
-const userModel=mongoose.model('userDetails',userSchema)
+const userModel=mongoose.model('demo',userSchema)
+//aggregations - gt lt gte lte ne in
+/*const data1=new userModel({
+    username:'CARRY',
+    age:30,
+    country:'IND'
+   
+    
+})
+data1.save().then((res)=>console.log("data is inserted")).catch((Err)=>console.log('insert failed'))
+const data2=new userModel({
+    username:'koushik',
+    age:10,
+    country:'IND'
+    
+})
+data2.save().then((res)=>console.log("data is inserted")).catch((Err)=>console.log('insert failed'))
 
+userModel.find({username:'helen',age:21}).then((res)=>console.log(res)).catch((e)=>console.log(e))
+
+userModel.find({$and:[{"username":'helen'},{"country":'US'}]}).then((res)=>console.log(res)).catch((e)=>console.log(e))
+userModel.find({age:{$gte:20}}).then((res)=>console.log(res)).catch((e)=>console.log(e))
+userModel.find({$or:[{"username":'helen'},{"country":'US'},{"age":{$gte:20}}]}).then((res)=>console.log(res)).catch((e)=>console.log(e))
+
+userModel.find({country:{$in:['IND','UK']}}).then((res)=>console.log(res)).catch((e)=>console.log(e))
+userModel.find({country:{$in:['IND','UK']}}).count().then((res)=>console.log(res)).catch((e)=>console.log(e))
+userModel.find({country:{$in:['IND','UK']}}).sort({username:1}).then((res)=>console.log(res)).catch((e)=>console.log(e)) -> ascending
+userModel.find({country:{$in:['IND','UK']}}).sort({username:-1}).then((res)=>console.log(res)).catch((e)=>console.log(e)) -> descending
+userModel.find({country:"IND"},{country:0}).then((res)=>console.log(res)).catch((e)=>console.log(e))
+*/
 //crud - creation reading update and delete
 //insert mongoose
 /*const data1=new userModel({

@@ -1,0 +1,22 @@
+create todo :
+
+/create - 
+
+task name
+task id
+completion status - false 
+
+/getAll
+
+able to see all the task
+
+/gettask
+
+taskname as input
+
+only this taskname should be in op
+
+/delete
+
+id -> that todo item should be deleted
+
